@@ -3,15 +3,17 @@ import { Image } from 'react-native'
 import { styles } from './styles'
 
 type Props = {
-  image: null
+  image: string
 }
 
 export function GuildIcon({ image }: Props) {
+  const guildImg = `../../assets/${image}`
+// console.log(guildImg)
 
   return (
     <Image
       style={styles.image}
-      source={{ uri: `../../assets/${image}` }}
+      source={require(`../../assets/league_of_legends.png`)}
     />
   )
 

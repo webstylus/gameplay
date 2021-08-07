@@ -5,18 +5,26 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 24,
-    marginTop: 27,
+    alignItems: 'center'
   },
   title: {
     fontFamily: theme.fonts.title700,
-    color: theme.colors.highlight,
+    color: theme.colors.heading,
     fontSize: 18
   },
-  subtitle: {
+  status: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  nameStatus: {
     fontFamily: theme.fonts.text400,
     color: theme.colors.highlight,
     fontSize: 13
+  },
+  BulletStatus: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginRight: 8
   }
 })

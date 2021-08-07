@@ -8,9 +8,12 @@ import { ListHeader } from '../../components/ListHeader'
 import { Appointment } from '../../components/Appointment'
 import { ListDivider } from '../../components/ListDivider'
 import { Background } from '../../components/Brackground'
+import { useNavigation } from '@react-navigation/native'
 
 export function Home() {
   const [category, setCategory] = useState('')
+  const navigation = useNavigation()
+
   const appointments = [
     {
       id: '1',
@@ -32,33 +35,41 @@ export function Home() {
       : setCategory(categoryId)
   }
 
+  function handleAppointmentDetail() {
+    navigation.navigate('AppointmentDetail')
+  }
+
+  function handleAppointmentCreate() {
+    navigation.navigate('AppointmentCreate')
+  }
+
   return (
     <Background>
       <View style={styles.header}>
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
-      <View>
-        <CategorySelect
-          categorySelected={category}
-          setCategory={handleCategorySelect}
-        />
-        <View style={styles.content}>
-          <ListHeader title={'Partidas agendadas'} subtitle={'Total 6'} />
 
-          <FlatList
-            data={appointments}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              // @ts-ignore
-              <Appointment data={item} />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
-      </View>
+      <CategorySelect
+        categorySelected={category}
+        setCategory={handleCategorySelect}
+      />
+
+      <ListHeader title={'Partidas agendadas'} subtitle={'Total 6'} />
+
+      <FlatList
+        data={appointments}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <Appointment
+            data={item}
+            onPress={handleAppointmentDetail} />
+        )}
+        ItemSeparatorComponent={() => <ListDivider />}
+        style={styles.matches}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{paddingBottom: 69}}
+      />
     </Background>
   )
 }
