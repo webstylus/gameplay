@@ -1,16 +1,16 @@
 #### Projeto final de treinamento React-Native da NLW
 
-This app use Discord APP and Webhook.
+Este aplicativo Mobile usa Login OAuth2 do Discord e consome dados de servidor usuário.
 
-Install dependencies 
+Instale as dependências da aplicação 
 
     $ yarn install or npm install
 
-Before start application, open or plug yor emulator 
+Antes de build o ambiente do app, abra ou plugue seu emulador 
 
     $ expo start
 
-Data sensitive on .env.example, rename to .env
+Os dados sensíveis da aplicação devem ser alocador no .env, renomeie o aquivo .env.example para .env
 
 ````.dotenv
 REDIRECT_URI=
