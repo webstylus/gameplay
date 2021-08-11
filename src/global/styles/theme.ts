@@ -16,7 +16,9 @@ export const theme = {
     highlight: '#abb1cc',
     heading: '#DDE3F0',
     line: '#991F36',
-    on: '#32bd50'
+    on: '#32bd50',
+
+    discord: '#7289da'
   },
 
   fonts: {

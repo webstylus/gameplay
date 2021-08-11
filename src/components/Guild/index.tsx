@@ -8,7 +8,7 @@ import { theme } from '../../global/styles/theme'
 export type GuildProps = {
   id: string,
   name: string,
-  icon: string
+  icon: string | null
   owner: boolean
 }
 
@@ -23,7 +23,7 @@ export function Guild({ data, ...rest }: Props) {
       style={styles.container}
       activeOpacity={0.7}
       {...rest}>
-      <GuildIcon image={data.icon} />
+      <GuildIcon guildId={data.id} iconId={data.icon} />
       <View style={styles.content}>
         <View>
           <Text style={styles.title}>{data.name}</Text>
