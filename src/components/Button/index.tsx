@@ -5,7 +5,7 @@ import { Text } from 'react-native'
 import { styles } from './styles'
 
 type Props = RectButtonProps & {
-  title: string
+  title: string,
 }
 
 export function Button({ title, ...rest }: Props) {

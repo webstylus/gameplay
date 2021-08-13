@@ -62,7 +62,11 @@ export function AppointmentDetail() {
     const message = Platform.OS === 'ios'
       ? `Junte-se a ${guildSelected.guild.name}`
       : widget.instant_invite
-      Share.share({ message, url: widget.instant_invite })
+    Share.share({ message, url: widget.instant_invite })
+      .catch(reason => Alert.alert(
+        'Widget Indisponível',
+        'Verifique as configurações do servidor. Será que o Widget está habilitado?'
+      ))
   }
 
   function handleOpenGuild() {
@@ -71,8 +75,9 @@ export function AppointmentDetail() {
   }
 
   useEffect(() => {
-    fetchGuildWidget().then(r => {
-    })
+    fetchGuildWidget()
+      .then(r => {
+      })
   }, [])
 
   return (
@@ -98,27 +103,30 @@ export function AppointmentDetail() {
       {
         loading
           ? <Load />
-          : <>
-            <ListHeader
-              title={'Jogadores'}
-              subtitle={`Total ${widget.members.length}`}
-            />
-            <FlatList
-              style={styles.members}
-              data={widget.members}
-              keyExtractor={item => item.id}
-              renderItem={
-                ({ item }) => (<Member data={item} />)
-              }
-              ItemSeparatorComponent={() => <ListDivider />} />
+          :
+          widget.id ?
+            <>
+              <ListHeader
+                title={'Jogadores'}
+                subtitle={`Total ${widget.members.length}`}
+              />
+              <FlatList
+                style={styles.members}
+                data={widget.members}
+                keyExtractor={item => item.id}
+                renderItem={
+                  ({ item }) => (<Member data={item} />)
+                }
+                ItemSeparatorComponent={() => <ListDivider />} />
 
-            {
-              guildSelected.guild.owner &&
-              <View style={styles.footer}>
-                <ButtonIcon title={'Entrar na partida'} onPress={handleOpenGuild} />
-              </View>
-            }
-          </>
+              {
+                guildSelected.guild.owner &&
+                <View style={styles.footer}>
+                  <ButtonIcon title={'Entrar na partida'} onPress={handleOpenGuild} />
+                </View>
+              }
+            </>
+            : <Text>Widget desabilitado no servidor</Text>
       }
     </Background>
   )
