@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.title700,
     fontSize: 20
   },
-  containerOutline: {
+  buttonOutline: {
     width: 150,
     height: 56,
     flexDirection: 'row',
@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
   },
-  containerPrimary: {
+  buttonPrimary: {
     width: 150,
     height: 56,
     backgroundColor: theme.colors.primary,

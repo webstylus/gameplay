@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
   },
   selectBody: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'center'
   },
   image: {
     width: 64,
@@ -65,11 +65,37 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text500,
     color: theme.colors.highlight,
     fontSize: 18,
-    marginRight:4
+    marginRight: 4
   },
   caracteresLimit: {
     fontFamily: theme.fonts.text400,
     color: theme.colors.highlight,
-    fontSize: 13,
+    fontSize: 13
+  },
+  buttonPrimary: {
+    width: 150,
+    height: 56,
+    backgroundColor: theme.colors.primary,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  title: {
+    flex: 1,
+    color: theme.colors.heading,
+    fontSize: 15,
+    textAlign: 'center',
+    fontFamily: theme.fonts.text500
+  },
+  alertContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  alertMessage: {
+    color: theme.colors.heading,
+    fontSize: 16,
+    fontFamily: theme.fonts.text500,
+    paddingBottom: 30
   }
 })

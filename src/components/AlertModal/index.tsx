@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { View, Modal, ModalProps } from 'react-native'
+import { View, Text, Modal, ModalProps } from 'react-native'
 import { styles } from './styles'
 import { Background } from '../Brackground'
 
@@ -7,7 +7,7 @@ type Props = ModalProps & {
   children: ReactNode
 }
 
-export function Menu({children, ...rest} : Props) {
+export function AlertModal({ children, ...rest }: Props) {
 
   return (
     <Modal

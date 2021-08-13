@@ -4,18 +4,18 @@ import { styles } from './styles'
 import { Avatar } from '../Avatar'
 import { useAuth } from '../../hooks/auth'
 import { RectButton } from 'react-native-gesture-handler'
-import { Menu } from '../Menu'
+import { AlertModal } from '../AlertModal'
 
 export function Profile() {
   const { user, signOut } = useAuth()
-  const [menu, setMenu] = useState(false)
+  const [alert, setAlert] = useState(false)
 
   function handleOpenMenu() {
-    setMenu(true)
+    setAlert(true)
   }
 
   function handleCloseMenu() {
-    setMenu(false)
+    setAlert(false)
   }
 
   return (
@@ -32,7 +32,7 @@ export function Profile() {
         <Text style={styles.message}>Hoje é dia de vitória</Text>
       </View>
 
-      <Menu visible={menu}>
+      <AlertModal visible={alert}>
         <View style={styles.question}>
           <Text style={styles.textHighlight}>Deseja sair do Game</Text>
           <Text style={styles.textPrimary}>Play</Text>
@@ -40,18 +40,18 @@ export function Profile() {
         <View style={styles.buttonGroup}>
           <TouchableOpacity
             activeOpacity={0.7}
-            style={styles.containerOutline}
+            style={styles.buttonOutline}
             onPress={handleCloseMenu}>
             <Text style={styles.title}>Não</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.7}
-            style={styles.containerPrimary}
+            style={styles.buttonPrimary}
             onPress={() => signOut()}>
             <Text style={styles.title}>Sim</Text>
           </TouchableOpacity>
         </View>
-      </Menu>
+      </AlertModal>
     </View>
   )
 }

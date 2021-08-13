@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native'
+import { View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
 import { Background } from '../../components/Brackground'
 import { Header } from '../../components/Header'
@@ -18,6 +18,7 @@ import { GuildProps } from '../../components/Guild'
 import uuid from 'react-native-uuid'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { COLLECTION_APPOINTMENTS } from '../../config/database'
+import { AlertModal } from '../../components/AlertModal'
 
 export function AppointmentCreate() {
   const navigation = useNavigation()
@@ -31,6 +32,19 @@ export function AppointmentCreate() {
   const [minute, setMinute] = useState('')
   const [description, setDescription] = useState('')
 
+  const [messageError, setMessageError] = useState('')
+  const [alert, setAlert] = useState(false)
+
+  function handleCloseMessageError() {
+    setMessageError('')
+    setAlert(false)
+  }
+
+  function handleOpenMessageError(message: string) {
+    setMessageError(message)
+    setAlert(true)
+  }
+
   async function handleSave() {
     const newAppointment = {
       id: uuid.v4(),
@@ -41,26 +55,26 @@ export function AppointmentCreate() {
     }
 
     if (!category) {
-      Alert.alert('Campo obrigatório', 'Selecione uma categoria')
+      handleOpenMessageError('Selecione uma categoria')
       return false
     }
     if (!guild.id) {
-      Alert.alert('Campo obrigatório', 'Selecione um servidor')
+      handleOpenMessageError('Selecione um servidor')
       return false
     }
     if (!day || !month) {
-      Alert.alert('Campo obrigatório', 'Digite a data completa')
+      handleOpenMessageError('Digite a data completa')
       return false
     }
     if (!hour || !minute) {
-      Alert.alert('Campos obrigatórios', 'Digite a hora completa')
+      handleOpenMessageError('Digite a hora completa')
       return false
     }
     if (!description) {
-      Alert.alert('Campo obrigatório', 'Digite uma descrição')
+      handleOpenMessageError('Digite uma descrição')
       return false
     } else if (description.length > 100) {
-      Alert.alert('Valor máximo', 'O Máximo de caracteres foi excedido.')
+      handleOpenMessageError('O Máximo de caracteres foi excedido.')
       return false
     }
 
@@ -170,6 +184,18 @@ export function AppointmentCreate() {
       <ModalView visible={openGuildsModal} closeModal={handleCloseGuilds}>
         <Guilds handleGuildSelect={handleGuildSelect} />
       </ModalView>
+
+      <AlertModal visible={alert}>
+        <View style={styles.alertContainer}>
+          <Text style={styles.alertMessage}>{messageError}</Text>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.buttonPrimary}
+            onPress={handleCloseMessageError}>
+            <Text style={styles.title}>Fechar</Text>
+          </TouchableOpacity>
+        </View>
+      </AlertModal>
     </KeyboardAvoidingView>
   )
 
