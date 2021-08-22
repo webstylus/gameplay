@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, KeyboardAvoidingView, Platform, ScrollView, Alert, TouchableOpacity } from 'react-native'
 import { styles } from './styles'
-import { Background } from '../../components/Brackground'
+import { Background } from '../../components/Background'
 import { Header } from '../../components/Header'
 import { CategorySelect } from '../../components/CategorySelect'
 import { useNavigation } from '@react-navigation/native'

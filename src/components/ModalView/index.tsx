@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { View, ModalProps, Modal, TouchableWithoutFeedback } from 'react-native'
 import { styles } from './styles'
-import { Background } from '../Brackground'
+import { Background } from '../Background'
 
 type Props = ModalProps & {
   children: ReactNode,

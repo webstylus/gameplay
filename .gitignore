@@ -10,8 +10,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.env
+package.lock
 
 # macOS
 .DS_Store
 
-.env

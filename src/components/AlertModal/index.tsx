@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { View, Text, Modal, ModalProps } from 'react-native'
 import { styles } from './styles'
-import { Background } from '../Brackground'
+import { Background } from '../Background'
 
 type Props = ModalProps & {
   children: ReactNode

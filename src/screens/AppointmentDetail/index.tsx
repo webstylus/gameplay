@@ -9,7 +9,7 @@ import {
   Platform
 } from 'react-native'
 import { styles } from './styles'
-import { Background } from '../../components/Brackground'
+import { Background } from '../../components/Background'
 import { Header } from '../../components/Header'
 import { BorderlessButton } from 'react-native-gesture-handler'
 import { Fontisto } from '@expo/vector-icons'

@@ -3,7 +3,7 @@ import { View, Text, Image, Alert, ActivityIndicator } from 'react-native'
 import { styles } from './styles'
 import IllustrationImg from '../../assets/illustration.png'
 import { ButtonIcon } from '../../components/ButtonIcon'
-import { Background } from '../../components/Brackground'
+import { Background } from '../../components/Background'
 import { useAuth } from '../../hooks/auth'
 import { theme } from '../../global/styles/theme'
 
