@@ -1,5 +1,8 @@
 #### Projeto final de treinamento React-Native da NLW
 
+O aplicativo serve para criar agendamentos para os seus servidores do discord
+e ter um lembrete em quais servidores e horários você participará de partidas/bate-papos.
+
 Este aplicativo Mobile usa Login OAuth2 do Discord e consome dados de servidor usuário.
 
 Instale as dependências da aplicação 
