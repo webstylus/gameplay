@@ -22,3 +22,9 @@ RESPONSE_TYPE=
 CLIENT_ID=
 CDN_IMAGE=
 ````
+
+### Próximas features
+
+- Notificações de agendamento quando estiver próximo da data e hora.
+- Convidar amigos para participar da agenda.
+- Disponibilizar sua agenda para os amigos do servidor.
