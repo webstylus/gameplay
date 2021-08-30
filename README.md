@@ -5,7 +5,7 @@ e ter um lembrete em quais servidores e horários você participará de partidas
 
 Este aplicativo Mobile usa Login OAuth2 do Discord e consome dados de servidor usuário.
 
-Instale as dependências da aplicação 
+Instale as dependências da aplicação. 
 
     $ yarn install or npm install
 
