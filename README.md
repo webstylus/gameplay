@@ -30,3 +30,7 @@ CDN_IMAGE=
 - Notificações de agendamento quando estiver próximo da data e hora.
 - Convidar amigos para participar da agenda.
 - Disponibilizar sua agenda para os amigos do servidor.
+
+### Figma do projeto
+
+- https://www.figma.com/file/xq0KuXQyPLJrN2ZLGvksfE/GamePaly-NLW?node-id=2%3A3https://www.figma.com/file/xq0KuXQyPLJrN2ZLGvksfE/GamePaly-NLW?node-id=2%3A3
