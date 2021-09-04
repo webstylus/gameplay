@@ -1,5 +1,7 @@
 #### Projeto final de treinamento React-Native da NLW
 
+![alt text](https://github.com/webstylus/gameplay/blob/main/src/assets/cover.png?raw=true)
+
 O aplicativo serve para criar agendamentos para os seus servidores do discord
 e ter um lembrete em quais servidores e horários você participará de partidas/bate-papos.
 
