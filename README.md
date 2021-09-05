@@ -1,5 +1,7 @@
 #### Projeto final de treinamento React-Native da NLW
 
+Desenvolvido com React-Native e TypeScript, build via Expo.
+
 ![alt text](https://github.com/webstylus/gameplay/blob/main/src/assets/cover.png?raw=true)
 
 O aplicativo serve para criar agendamentos para os seus servidores do discord
